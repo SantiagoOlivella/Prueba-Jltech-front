@@ -11,6 +11,7 @@ import { ModuleProduct } from "../components/module/moduleProduct/ModuleProduct"
 import { ModuleShopping } from "../components/module/moduleShopping/ModuleShopping";
 import { ModuleUser } from "../components/module/moduleUser/ModuleUser";
 import { Login } from "../components/login/Login";
+import { Home } from "../components/module/home/Home";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" exact element={<Login />} />
+        <Route path="/home" exact element={<Home />} />
         <Route path="/client" exact element={<ModuleClient />} />
         <Route path="/product" exact element={<ModuleProduct />} />
         <Route path="/shopping" exact element={<ModuleShopping />} />
