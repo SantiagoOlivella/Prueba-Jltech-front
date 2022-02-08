@@ -1,0 +1,34 @@
+.titleSeccion {
+  background-color: bisque;
+  text-align: center;
+
+  h1 {
+    font-weight: bold;
+    color: blue;
+  }
+}
+
+.container-cards {
+  background-color: bisque;
+
+  .cardeach {
+    background-color: lightsteelblue;
+    transition: background-color 0.5s;
+
+    :hover {
+      background-color: gold;
+    }
+
+    img {
+      height: 10rem;
+    }
+
+    .card-body-text h4 {
+      color: blue;
+      text-align: center;
+      font-weight: bold;
+      text-decoration: underline;
+      text-decoration-color: skyblue;
+    }
+  }
+}
