@@ -1,0 +1,24 @@
+
+.title-modulo-cliente {
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  h3 {
+    text-align: center;
+  }
+}
+
+.modal {
+  display: flex;
+
+  .modal-content {
+    align-items: center;
+    background-color: lightgrey;
+
+    h5 {
+      color: red;
+    }
+  }
+}

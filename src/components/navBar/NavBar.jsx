@@ -1,11 +1,29 @@
 import "./NavBar.scss";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-// import { useUser } from "../context/UserContext";
 
 export const NavBar = () => {
-//   const { user, exit } = useUser();
-const user={login:true, name:"prueba"}
+  const user = { login: true, name: "prueba" };
+  const [validationLogin, setvalidationLogin] = useState({
+    login: false,
+    name: "Usuario",
+  });
+
+  useEffect(() => {
+    const perfil = JSON.parse(localStorage.getItem("user"));
+    if (perfil !== undefined && perfil !== null) {
+      const info = {
+        login: perfil.login,
+        name: perfil.nombre,
+      };
+      setvalidationLogin(info);
+    }
+  }, []);
+
+
+  const exit = () => {
+    localStorage.removeItem("user");
+  };
 
   return (
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
@@ -33,12 +51,22 @@ const user={login:true, name:"prueba"}
                   aria-expanded="false"
                   id="noteDrop"
                 >
-                  Notes
+                  gestión
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="noteDrop">
                   <li>
                     <NavLink to={"/client"} className="dropdown-item">
                       Clientes
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/shopping"} className="dropdown-item">
+                      Ventas
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to={"/user"} className="dropdown-item">
+                      Usuarios
                     </NavLink>
                   </li>
                   <li>
